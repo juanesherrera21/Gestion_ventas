@@ -1,6 +1,6 @@
 public class OrderDao:ConnectionSql 
     {
-        public DataTable getSalesOrder(DateTime fromDate, DateTime toDate)
+        public DataTablegetSalesOrder(DateTime fromDate, DateTime toDate)
         {
             using (var connection = getConnection())
             {
