@@ -1,5 +1,5 @@
-create database BikeStore
-create table products
+CREATE DATABASE BikeStore
+CREATE TABLE products
 (
   product_id int identity (1,1) primary key,
   product_name varchar (200) NOT NULL,
@@ -17,14 +17,14 @@ CREATE TABLE customers (
   state VARCHAR (25),
   zip_code VARCHAR (5)
 );
-create table orders
+CREATE TABLE orders
 (
   order_id int identity (1,1) primary key,
   customer_id int not null,
   order_date date not null,
   constraint FK_Customer foreign key (customer_id) references customers(customer_id)
 );
-create table order_items
+CREATE TABLE order_items
 (
   order_item_id int identity (1,1) primary key,
   order_id int not null,
