@@ -1,10 +1,10 @@
 CREATE DATABASE BikeStore
 CREATE TABLE products
 (
-  product_id int identity (1,1) primary key,
-  product_name varchar (200) NOT NULL,
-  model_year smallint NOT NULL,
-  price decimal (10, 2) NOT NULL
+  product_id INT IDENTITY (1,1) PRIMARY KEY,
+  product_name VARCHAR (200) NOT NULL,
+  model_year SMALLINT NOT NULL,
+  price DECIMAL (10, 2) NOT NULL
 );
 CREATE TABLE customers (
   customer_id INT IDENTITY (1, 1) PRIMARY KEY,
@@ -19,19 +19,19 @@ CREATE TABLE customers (
 );
 CREATE TABLE orders
 (
-  order_id int identity (1,1) primary key,
-  customer_id int not null,
-  order_date date not null,
-  constraint FK_Customer foreign key (customer_id) references customers(customer_id)
+  order_id INT IDENTITY (1,1) PRIMARY KEY,
+  customer_id INT NOT NULL,
+  order_date DATE NOT NULL,
+  CONSTRAINT FK_Customer FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
 CREATE TABLE order_items
 (
-  order_item_id int identity (1,1) primary key,
-  order_id int not null,
+  order_item_id INT IDENTITY (1,1) PRIMARY KEY,
+  order_id INT NOT NULL,
   product_id INT NOT NULL,
   quantity INT NOT NULL,
   price DECIMAL (10, 2) NOT NULL,
   discount DECIMAL (4, 2) NOT NULL DEFAULT 0,
-  constraint fk_Order foreign key (order_id) references orders(order_id),
-  constraint fk_Product foreign key (product_id) references products(product_id)
+  CONSTRAINT fk_Order FOREIGN KEY (order_id) REFERENCES orders(order_id),
+  CONSTRAINT fk_Product FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
