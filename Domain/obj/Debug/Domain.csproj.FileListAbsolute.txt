@@ -1,0 +1,9 @@
+C:\Users\Juan Herrera\source\repos\LoginLayeredCSharp\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Juan Herrera\source\repos\LoginLayeredCSharp\Domain\bin\Debug\Domain.dll
+C:\Users\Juan Herrera\source\repos\LoginLayeredCSharp\Domain\bin\Debug\Domain.pdb
+C:\Users\Juan Herrera\source\repos\LoginLayeredCSharp\Domain\bin\Debug\DataAccess.dll
+C:\Users\Juan Herrera\source\repos\LoginLayeredCSharp\Domain\bin\Debug\DataAccess.pdb
+C:\Users\Juan Herrera\source\repos\LoginLayeredCSharp\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
+C:\Users\Juan Herrera\source\repos\LoginLayeredCSharp\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\Users\Juan Herrera\source\repos\LoginLayeredCSharp\Domain\obj\Debug\Domain.dll
+C:\Users\Juan Herrera\source\repos\LoginLayeredCSharp\Domain\obj\Debug\Domain.pdb
