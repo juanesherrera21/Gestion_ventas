@@ -1,14 +1,14 @@
-create database Bike_Store
-go
-use Bike_Store
-go
+CREATE DATABASE Bike_Store
+GO
+USE Bike_Store
+GO
 
-create table products
+CREATE TABLE products
 (
-	product_id int identity (1,1) primary key,
-	product_name varchar (200) NOT NULL,
-	model_year smallint NOT NULL,
-	price decimal (10, 2) NOT NULL
+	product_id INT IDENTITY (1,1) PRIMARY KEY,
+	product_name VARCHAR (200) NOT NULL,
+	model_year SMALL INT NOT NULL,
+	price DECIMAL (10, 2) NOT NULL
 );
 CREATE TABLE customers (
 	customer_id INT IDENTITY (1, 1) PRIMARY KEY,
@@ -21,24 +21,24 @@ CREATE TABLE customers (
 	state VARCHAR (25),
 	zip_code VARCHAR (5)
 );
-create table orders
+CREATE TABLE orders
 (
-	order_id int identity (1,1) primary key,
-	customer_id int not null,
-	order_date date not null,
-	constraint FK_Customer foreign key (customer_id) references customers(customer_id)
+	order_id INT DENTITY (1,1) PRIMARY KEY,
+	customer_id INT NOT NULL,
+	order_date DATE NOT NULL,
+	CONSTRAINT FK_Customer FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
 
-create table order_items
+CREATE TABLE order_items
 (
-	order_item_id int identity (1,1) primary key,
-	order_id int not null,
+	order_item_id INT IDENTITY (1,1) PRIMARY KEY,
+	order_id INT NOT NULL,
 	product_id INT NOT NULL,
 	quantity INT NOT NULL,
 	price DECIMAL (10, 2) NOT NULL,
 	discount DECIMAL (4, 2) NOT NULL DEFAULT 0,
-	constraint fk_Order foreign key (order_id) references orders(order_id),
-	constraint fk_Product foreign key (product_id) references products(product_id)
+	CONSTRAINT fk_Order foreign key (order_id) REFERENCES orders(order_id),
+	CONSTRAINT fk_Product foreign key (product_id) REFERENCES products(product_id)
 );
 
 --insertar productos
@@ -560,7 +560,7 @@ insert into customers values('	Ayanna	','	Rhodes	','		','	ayanna.rhodes@msn.com	
 insert into customers values('	Dorine	','	Roberson	','		','	dorine.roberson@msn.com	','	396 Meadowbrook Lane	','	Santa Cruz	','	CA	',	95060	);		
 insert into customers values('	Addie	','	Hahn	','		','	addie.hahn@hotmail.com	','	8165 Baker Ave.	','	Franklin Square	','	NY	',	11010	);		
 insert into customers values('	Edythe	','	Valencia	','		','	edythe.valencia@yahoo.com	','	9346 Wall St.	','	North Tonawanda	','	NY	',	14120	);		
-insert into customers values('	Andy	','	O´neill	','		','	andy.o´neill@msn.com	','	9544 Mulberry Drive	','	Rego Park	','	NY	',	11374	);		
+insert into customers values('	Andy	','	OÂ´neill	','		','	andy.oÂ´neill@msn.com	','	9544 Mulberry Drive	','	Rego Park	','	NY	',	11374	);		
 insert into customers values('	Luis	','	Tyler	','		','	luis.tyler@gmail.com	','	9568 Campfire Circle	','	Amarillo	','	TX	',	79106	);		
 insert into customers values('	Clelia	','	Workman	','		','	clelia.workman@yahoo.com	','	620 North Somerset St.	','	New Windsor	','	NY	',	12553	);		
 insert into customers values('	Ashely	','	Holmes	','		','	ashely.holmes@aol.com	','	45 High Ridge Ave.	','	Farmingdale	','	NY	',	11735	);		
@@ -599,7 +599,7 @@ insert into customers values('	Freddie	','	Mathis	','		','	freddie.mathis@hotmai
 insert into customers values('	Mariana	','	Strong	','		','	mariana.strong@msn.com	','	972 Dunbar Dr.	','	Santa Clara	','	CA	',	95050	);		
 insert into customers values('	Winfred	','	Harris	','		','	winfred.harris@msn.com	','	734 Glen Eagles St.	','	East Meadow	','	NY	',	11554	);		
 insert into customers values('	Jeromy	','	Elliott	','		','	jeromy.elliott@gmail.com	','	7112 Laurel Street	','	Bay Shore	','	NY	',	11706	);		
-insert into customers values('	Verona	','	O´neill	','		','	verona.o´neill@hotmail.com	','	8279 W. Sussex St.	','	Selden	','	NY	',	11784	);		
+insert into customers values('	Verona	','	OÂ´neill	','		','	verona.oÂ´neill@hotmail.com	','	8279 W. Sussex St.	','	Selden	','	NY	',	11784	);		
 insert into customers values('	Elvera	','	Peck	','		','	elvera.peck@yahoo.com	','	759 Lakewood Street	','	Banning	','	CA	',	92220	);		
 insert into customers values('	Cindi	','	Larson	','		','	cindi.larson@msn.com	','	896 Golden Star Rd.	','	Howard Beach	','	NY	',	11414	);		
 insert into customers values('	Felice	','	Guzman	','		','	felice.guzman@hotmail.com	','	7 Creekside Lane	','	Canyon Country	','	CA	',	91387	);		
@@ -741,7 +741,7 @@ insert into customers values('	Candelaria	','	Coffey	','		','	candelaria.coffey@
 insert into customers values('	Yan	','	Trevino	','		','	yan.trevino@gmail.com	','	796 Jefferson Rd.	','	Uniondale	','	NY	',	11553	);		
 insert into customers values('	Elanor	','	Patrick	','		','	elanor.patrick@aol.com	','	51 Howard Ave.	','	Victoria	','	TX	',	77904	);		
 insert into customers values('	Klara	','	Mosley	','		','	klara.mosley@gmail.com	','	518 Devon Court	','	Port Chester	','	NY	',	10573	);		
-insert into customers values('	Rosalba	','	O´neal	','		','	rosalba.o´neal@yahoo.com	','	7517 Pennsylvania St.	','	Mount Vernon	','	NY	',	10550	);		
+insert into customers values('	Rosalba	','	OÂ´neal	','		','	rosalba.oÂ´neal@yahoo.com	','	7517 Pennsylvania St.	','	Mount Vernon	','	NY	',	10550	);		
 insert into customers values('	Mina	','	Carrillo	','		','	mina.carrillo@aol.com	','	8659 Trenton Lane	','	Uniondale	','	NY	',	11553	);		
 insert into customers values('	Alesia	','	Horne	','		','	alesia.horne@aol.com	','	9229 Amherst Lane	','	Selden	','	NY	',	11784	);		
 insert into customers values('	Kristen	','	Alvarez	','		','	kristen.alvarez@aol.com	','	9778 North River St.	','	Bronx	','	NY	',	10451	);		
@@ -769,7 +769,7 @@ insert into customers values('	Kerrie	','	Morton	','		','	kerrie.morton@hotmail.
 insert into customers values('	Elouise	','	Fry	','		','	elouise.fry@aol.com	','	49 Bohemia Street	','	Canyon Country	','	CA	',	91387	);		
 insert into customers values('	Augustus	','	Steele	','		','	augustus.steele@aol.com	','	7474 N. Orchard St.	','	Ballston Spa	','	NY	',	12020	);		
 insert into customers values('	Greta	','	Page	','		','	greta.page@hotmail.com	','	8316 Augusta Drive	','	Commack	','	NY	',	11725	);		
-insert into customers values('	Kerrie	','	O´neill	','		','	kerrie.o´neill@gmail.com	','	69 Wellington Ave.	','	Shirley	','	NY	',	11967	);		
+insert into customers values('	Kerrie	','	OÂ´neill	','		','	kerrie.oÂ´neill@gmail.com	','	69 Wellington Ave.	','	Shirley	','	NY	',	11967	);		
 insert into customers values('	Dannette	','	Guerrero	','		','	dannette.guerrero@gmail.com	','	68 Carriage Street	','	San Pablo	','	CA	',	94806	);		
 insert into customers values('	Edra	','	Fitzgerald	','		','	edra.fitzgerald@msn.com	','	8892 Birchwood St.	','	Central Islip	','	NY	',	11722	);		
 insert into customers values('	Jerome	','	Bolton	','		','	jerome.bolton@msn.com	','	9921 Argyle Street	','	Carmel	','	NY	',	10512	);		
@@ -1069,7 +1069,7 @@ insert into customers values('	Sharie	','	Whitaker	','		','	sharie.whitaker@hotm
 insert into customers values('	Diana	','	Cobb	','		','	diana.cobb@hotmail.com	','	558 Vale St.	','	Fullerton	','	CA	',	92831	);		
 insert into customers values('	Morton	','	Barron	','	(661) 386-4884	','	morton.barron@msn.com	','	542 Circle Rd.	','	Bakersfield	','	CA	',	93306	);		
 insert into customers values('	Camille	','	Harvey	','		','	camille.harvey@hotmail.com	','	859 Beaver Ridge Ave.	','	Huntington	','	NY	',	11743	);		
-insert into customers values('	Lolita	','	O´neill	','		','	lolita.o´neill@aol.com	','	36 Prairie Dr.	','	Massapequa Park	','	NY	',	11762	);		
+insert into customers values('	Lolita	','	OÂ´neill	','		','	lolita.oÂ´neill@aol.com	','	36 Prairie Dr.	','	Massapequa Park	','	NY	',	11762	);		
 insert into customers values('	Terese	','	Briggs	','		','	terese.briggs@msn.com	','	16 N. Oak Valley St.	','	Woodside	','	NY	',	11377	);		
 insert into customers values('	Majorie	','	Glover	','		','	majorie.glover@msn.com	','	4 Garden Ave.	','	Apple Valley	','	CA	',	92307	);		
 insert into customers values('	Vinnie	','	Chan	','		','	vinnie.chan@aol.com	','	8750 Surrey St.	','	Forest Hills	','	NY	',	11375	);		
@@ -1277,7 +1277,7 @@ insert into customers values('	Elenore	','	William	','		','	elenore.william@msn.
 insert into customers values('	Nikita	','	Roy	','		','	nikita.roy@aol.com	','	9703 N. Snake Hill St.	','	Pittsford	','	NY	',	14534	);		
 insert into customers values('	Inocencia	','	Key	','		','	inocencia.key@hotmail.com	','	36 Wild Rose Ave.	','	Massapequa Park	','	NY	',	11762	);		
 insert into customers values('	Liliana	','	Kerr	','		','	liliana.kerr@yahoo.com	','	3 Cherry Drive	','	Desoto	','	TX	',	75115	);		
-insert into customers values('	Hortencia	','	O´neil	','		','	hortencia.o´neil@hotmail.com	','	1 Gulf Rd.	','	Rockville Centre	','	NY	',	11570	);		
+insert into customers values('	Hortencia	','	OÂ´neil	','		','	hortencia.oÂ´neil@hotmail.com	','	1 Gulf Rd.	','	Rockville Centre	','	NY	',	11570	);		
 insert into customers values('	Beryl	','	Bennett	','	(916) 422-6956	','	beryl.bennett@aol.com	','	9563 Edgemont St.	','	Sacramento	','	CA	',	95820	);		
 insert into customers values('	Alishia	','	Elliott	','		','	alishia.elliott@aol.com	','	8905 Courtland Ave.	','	Mount Vernon	','	NY	',	10550	);		
 insert into customers values('	Vernia	','	Madden	','	(248) 206-3697	','	vernia.madden@aol.com	','	5 Iroquois Street	','	Troy	','	NY	',	12180	);		
@@ -1301,7 +1301,7 @@ insert into customers values('	Ocie	','	Slater	','		','	ocie.slater@msn.com	','	
 insert into customers values('	Genevie	','	Miles	','		','	genevie.miles@aol.com	','	45 West Sulphur Springs Ave.	','	Monroe	','	NY	',	10950	);		
 insert into customers values('	Sherilyn	','	Wilcox	','		','	sherilyn.wilcox@gmail.com	','	905 North Buckingham Lane	','	Ossining	','	NY	',	10562	);		
 insert into customers values('	Aida	','	Koch	','		','	aida.koch@gmail.com	','	9778 3rd Drive	','	West Hempstead	','	NY	',	11552	);		
-insert into customers values('	Emory	','	O´connor	','	(507) 606-2192	','	emory.o´connor@gmail.com	','	34 Foxrun Street	','	Rochester	','	NY	',	14606	);		
+insert into customers values('	Emory	','	OÂ´connor	','	(507) 606-2192	','	emory.oÂ´connor@gmail.com	','	34 Foxrun Street	','	Rochester	','	NY	',	14606	);		
 insert into customers values('	Maximina	','	Hutchinson	','	(361) 164-3098	','	maximina.hutchinson@hotmail.com	','	53 Stillwater Avenue	','	Corpus Christi	','	TX	',	78418	);		
 insert into customers values('	Marina	','	Hinton	','		','	marina.hinton@yahoo.com	','	7440 North Oxford St.	','	Encino	','	CA	',	91316	);		
 insert into customers values('	Danyell	','	Dickerson	','		','	danyell.dickerson@msn.com	','	8306 Fieldstone Dr.	','	Central Islip	','	NY	',	11722	);		
@@ -1486,7 +1486,7 @@ insert into customers values('	Tora	','	Dunlap	','		','	tora.dunlap@hotmail.com	
 insert into customers values('	Karole	','	Alvarez	','		','	karole.alvarez@gmail.com	','	69 Woodland St.	','	East Northport	','	NY	',	11731	);		
 insert into customers values('	Shasta	','	Combs	','		','	shasta.combs@yahoo.com	','	726 James Dr.	','	Yorktown Heights	','	NY	',	10598	);		
 insert into customers values('	Cicely	','	Deleon	','		','	cicely.deleon@yahoo.com	','	751 Newbridge Ave.	','	Massapequa Park	','	NY	',	11762	);		
-insert into customers values('	Raphael	','	O´neil	','		','	raphael.o´neil@aol.com	','	762 East Lantern Dr.	','	Fairport	','	NY	',	14450	);		
+insert into customers values('	Raphael	','	OÂ´neil	','		','	raphael.oÂ´neil@aol.com	','	762 East Lantern Dr.	','	Fairport	','	NY	',	14450	);		
 insert into customers values('	Hubert	','	Reilly	','		','	hubert.reilly@hotmail.com	','	9004 N. Lake Rd.	','	Amityville	','	NY	',	11701	);		
 insert into customers values('	Caleb	','	England	','		','	caleb.england@gmail.com	','	649 Marvon St.	','	Pleasanton	','	CA	',	94566	);		
 insert into customers values('	Elmira	','	Levy	','		','	elmira.levy@gmail.com	','	6 Columbia Dr.	','	Spring Valley	','	NY	',	10977	);		
@@ -1585,7 +1585,7 @@ insert into customers values('	Donovan	','	Cantrell	','	(510) 624-3824	','	donov
 insert into customers values('	Alden	','	Atkinson	','		','	alden.atkinson@gmail.com	','	46 Valley St.	','	Shirley	','	NY	',	11967	);		
 insert into customers values('	Carissa	','	Cross	','		','	carissa.cross@yahoo.com	','	9335 West Main Dr.	','	Huntington Station	','	NY	',	11746	);		
 insert into customers values('	Joy	','	Underwood	','		','	joy.underwood@gmail.com	','	7297 Armstrong Dr.	','	Apple Valley	','	CA	',	92307	);		
-insert into customers values('	Geraldine	','	O´donnell	','		','	geraldine.o´donnell@hotmail.com	','	8241 Lookout Rd.	','	Flushing	','	NY	',	11354	);		
+insert into customers values('	Geraldine	','	OÂ´donnell	','		','	geraldine.oÂ´donnell@hotmail.com	','	8241 Lookout Rd.	','	Flushing	','	NY	',	11354	);		
 insert into customers values('	Bronwyn	','	Vargas	','		','	bronwyn.vargas@msn.com	','	35 James Street	','	New Windsor	','	NY	',	12553	);		
 insert into customers values('	Abram	','	Copeland	','		','	abram.copeland@gmail.com	','	9782 Indian Spring Lane	','	Harlingen	','	TX	',	78552	);		
 insert into customers values('	Mellisa	','	Griffin	','		','	mellisa.griffin@msn.com	','	49 Alton Circle	','	Los Banos	','	CA	',	93635	);		
@@ -1778,7 +1778,7 @@ insert into customers values('	Shanda	','	Stevenson	','		','	shanda.stevenson@ya
 insert into customers values('	Adrien	','	Hunter	','		','	adrien.hunter@yahoo.com	','	720 Thompson Lane	','	Rego Park	','	NY	',	11374	);		
 insert into customers values('	Ophelia	','	Decker	','		','	ophelia.decker@yahoo.com	','	69 Rockwell Court	','	New Windsor	','	NY	',	12553	);		
 insert into customers values('	Sonja	','	Walls	','		','	sonja.walls@aol.com	','	30 Marshall Dr.	','	Queensbury	','	NY	',	12804	);		
-insert into customers values('	Harold	','	O´connor	','		','	harold.o´connor@gmail.com	','	9530 Summerhouse Street	','	Santa Cruz	','	CA	',	95060	);		
+insert into customers values('	Harold	','	OÂ´connor	','		','	harold.oÂ´connor@gmail.com	','	9530 Summerhouse Street	','	Santa Cruz	','	CA	',	95060	);		
 insert into customers values('	Miranda	','	Kennedy	','		','	miranda.kennedy@gmail.com	','	726 East High St.	','	Astoria	','	NY	',	11102	);		
 insert into customers values('	Jasper	','	Castro	','		','	jasper.castro@aol.com	','	977 SE. Railroad Road	','	Forney	','	TX	',	75126	);		
 insert into customers values('	Penni	','	Best	','	(657) 611-2991	','	penni.best@msn.com	','	875 Second Drive	','	Anaheim	','	CA	',	92806	);		
